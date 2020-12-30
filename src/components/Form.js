@@ -28,7 +28,7 @@ const FormStyle = styled.div`
 `;
 
 const initialState = {
-  profile: "",
+  profile_url: "",
   author: "",
   content: "",
   createdAt: "",
@@ -37,7 +37,9 @@ const initialState = {
 function Form() {
   const [state, setState] = useState(initialState);
 
-  const onChange = (key, value) => {
+  const onChange = (e) => {
+    const key = e.target.name;
+    const value = e.target.value;
     setState({ ...state, [key]: value });
   };
 
@@ -55,9 +57,9 @@ function Form() {
           type="text"
           name="profile_url"
           placeholder="https://picsum.photos/id/1/50/50"
-          value={state.profile}
+          value={state.profile_url}
           onChange={(e) => {
-            onChange("profile", e.target.value);
+            onChange(e);
           }}
           required
         />
@@ -68,7 +70,7 @@ function Form() {
           placeholder="작성자"
           value={state.author}
           onChange={(e) => {
-            onChange("author", e.target.value);
+            onChange(e);
           }}
         />
         <br />
@@ -78,7 +80,7 @@ function Form() {
           value={state.content}
           required
           onChange={(e) => {
-            onChange("content", e.target.value);
+            onChange(e);
           }}
         ></textarea>
         <br />
@@ -88,7 +90,7 @@ function Form() {
           placeholder="2020-05-30"
           value={state.createdAt}
           onChange={(e) => {
-            onChange("createdAt", e.target.value);
+            onChange(e);
           }}
           required
         />
