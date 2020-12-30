@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const PageListStyle = styled.div`
-  margin-bottom : 20px;
-  text-align : center;
+  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const Page = styled.button`
@@ -12,28 +12,27 @@ const Page = styled.button`
   font-size: 1rem;
   line-height: 1.5;
   border: 1px solid lightgray;
-  ${({ active }) => active && `
+  ${({ active }) =>
+    active &&
+    `
         background: gray;
         color: #fff;
   `}
   margin-right: 3px;
-  
 `;
 
+function PageList({ length }) {
+  console.log("PageList");
+  console.log(length);
+  const pageLength = Math.ceil(length / 4);
 
-function PageList(){
-    
-    const pageArray = [];
-    
-    pageArray.push(
-        // 임시로 페이지 하나만 설정했습니다.
-        <Page key="1">
-            1
-        </Page>
-    );
-    
+  const pageArray = [];
 
-    return <PageListStyle>{pageArray}</PageListStyle>
+  for (let i = 1; i <= pageLength; i++) {
+    pageArray.push(<Page key={i}>{i}</Page>);
+  }
+
+  return <PageListStyle>{pageArray}</PageListStyle>;
 }
 
 export default PageList;

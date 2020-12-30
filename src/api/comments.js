@@ -17,14 +17,18 @@ export const deleteComment = async (id) => {
 
 export const postComment = async (param) => {
   const response = await axios.post("http://localhost:4000/comments", param);
-  console.log('>>>>>>>>postComment>>>>>>>>>')
+  console.log(">>>>>>>>postComment>>>>>>>>>");
   console.log(response);
   return response.data;
 };
 
 export const putComment = async (param) => {
-  const response = await axios.put(`http://localhost:4000/comments/${param.id}`, param);
+  const { id } = param;
+  const response = await axios.put(
+    `http://localhost:4000/comments/${id}`,
+    param
+  );
   return response.data;
 };
 
-// todo: post, put, delete, get lazy
+// todo: get lazy
