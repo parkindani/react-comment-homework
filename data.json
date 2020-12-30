@@ -1,17 +1,10 @@
 {
   "comments": [
     {
-      "id": 2,
-      "profile_url": "https://picsum.photos/id/2/50/50",
-      "author": "abc_2",
-      "content": "막히면 대답은 빨리 해주나요?",
-      "createdAt": "2020-05-02"
-    },
-    {
       "id": 3,
       "profile_url": "https://picsum.photos/id/3/50/50",
       "author": "abc_3",
-      "content": "코드에러가 발생했는데 어딘지 모르겠어요",
+      "content": "코드에러가 발생했는데 어딘지 모르겠어요?",
       "createdAt": "2020-05-03"
     },
     {
@@ -22,11 +15,18 @@
       "createdAt": "2020-05-04"
     },
     {
-      "profile_url": "asdf",
-      "author": "asdf",
-      "content": "asdf",
-      "createdAt": "asdf",
-      "id": 5
+      "profile_url": "asdfasdf",
+      "author": "asdfasdf",
+      "content": "asdfasdf",
+      "createdAt": "asdfasdf",
+      "id": 7
+    },
+    {
+      "profile_url": "ㅁ",
+      "author": "ㅁ",
+      "content": "ㅁ",
+      "createdAt": "ㅁ",
+      "id": 12
     }
   ]
 }

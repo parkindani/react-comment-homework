@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getComments,
+  getCommentsPage,
   postComment,
   putComment,
 } from "../store/modules/comments";
@@ -11,12 +12,14 @@ function FormContainer() {
   const { data, loading, error } = useSelector(
     (state) => state.comments.modifyComment
   );
+  console.log()
   const dispatch = useDispatch();
   const onCreate = (comment) => {
     if (comment.id) {
       dispatch(putComment(comment));
     } else {
       dispatch(postComment(comment));
+      dispatch(getCommentsPage(1));
     }
     dispatch(getComments());
   };

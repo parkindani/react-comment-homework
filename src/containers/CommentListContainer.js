@@ -20,6 +20,7 @@ function CommentListContainer() {
   const onDelete = (id) => {
     dispatch(deleteComment(id));
     dispatch(getCommentsPage(1));
+    dispatch(getComments());
   };
 
   const onModify = (id) => {
