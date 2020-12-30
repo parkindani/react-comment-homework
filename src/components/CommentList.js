@@ -36,6 +36,19 @@ const Button = styled.div`
 `;
 
 function CommentList({ comments }) {
+
+  const onModify = (id) => {
+    // e.preventDefault();
+    console.log('>>>>>>>onModify>>>>>>>>>');
+    console.log(id);
+  }
+  
+  const onDelete = (id) => {
+    // e.preventDefault();
+    console.log('>>>>>>>onDelete>>>>>>>>>');
+    console.log(id);
+  }
+
   return comments.map((comment, key) => (
     <Comment key={key}>
       <img src={comment.profile_url} alt="" />
@@ -43,8 +56,8 @@ function CommentList({ comments }) {
       <CreatedAt>{comment.createdAt}</CreatedAt>
       <Content>{comment.content}</Content>
       <Button>
-        <a>수정</a>
-        <a>삭제</a>
+        <a onClick={() => {onModify(comment.id)}}>수정</a>
+        <a onClick={() => {onDelete(comment.id)}}>삭제</a>
       </Button>
       <hr />
     </Comment>
