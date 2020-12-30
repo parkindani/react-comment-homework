@@ -20,4 +20,9 @@ export const postComment = async (param) => {
   return response.data;
 };
 
+export const editComment = async (param) => {
+  const response = await axios.put("http://localhost:4000/comments", param);
+  return response.data;
+};
+
 // todo: post, put, delete, get lazy

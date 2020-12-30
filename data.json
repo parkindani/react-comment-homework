@@ -85,18 +85,11 @@
       "createdAt": "2020-05-12"
     },
     {
-      "profile_url": "https://picsum.photos/id/2/50/50",
-      "author": "테스트",
-      "content": "작성 테스트",
-      "createdAt": "2020-12-30",
+      "profile_url": "https://picsum.photos/id/22/50/50",
+      "author": "테스트 변경",
+      "content": "수정 테스트",
+      "createdAt": "2021-05-22",
       "id": 13
-    },
-    {
-      "profile_url": "https://picsum.photos/id/2/50/50",
-      "author": "테스트2",
-      "content": "또 다른 작성 테슽츠",
-      "createdAt": "2020-12-31",
-      "id": 14
     }
   ]
 }
