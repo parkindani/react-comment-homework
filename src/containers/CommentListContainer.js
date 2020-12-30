@@ -18,9 +18,8 @@ function CommentListContainer() {
   if (!data) return null;
 
   const onDelete = (id) => {
-    console.log(">>>>>>>>CommentListContainer>>>>>onDelete>>>>>>>");
-    console.log(id);
-    dispatch(deleteComment(id))
+    dispatch(deleteComment(id));
+    dispatch(getComments());
   };
 
   const onModify = (id) => {
