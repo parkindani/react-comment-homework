@@ -1,6 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getComments, postComment } from "../store/modules/comments";
+import {
+  getComments,
+  postComment,
+  putComment,
+} from "../store/modules/comments";
 import Form from "../components/Form";
 
 function FormContainer() {
@@ -9,13 +13,17 @@ function FormContainer() {
   );
   const dispatch = useDispatch();
   const onCreate = (comment) => {
-    dispatch(postComment(comment));
+    if (comment.id) {
+      dispatch(putComment(comment));
+    } else {
+      dispatch(postComment(comment));
+    }
     dispatch(getComments());
   };
 
   if (loading && !data) return <div>로딩중...</div>;
   if (error) return <div>에러 발생!</div>;
-  if (data) return <Form onPost={onCreate} comment={data}/>;
+  if (data) return <Form onPost={onCreate} comment={data} />;
 
   return <Form onPost={onCreate} />;
 }
