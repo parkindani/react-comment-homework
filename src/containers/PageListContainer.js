@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getComments } from "../store/modules/comments";
 import PageList from "../components/PageList";
+import { getCommentsPage } from "../store/modules/comments";
 
 function PageListContainer() {
   const { data, loading, error } = useSelector(
@@ -20,7 +21,12 @@ function PageListContainer() {
 
   const len = data.length;
 
-  return <PageList length={len} />;
+  const onClick = (i) => {
+    console.log("LISTCONTAINER", i);
+    dispatch(getCommentsPage(i))
+  };
+
+  return <PageList length={len} onClick={onClick} />;
 }
 
 export default PageListContainer;

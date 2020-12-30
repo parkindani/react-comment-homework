@@ -5,12 +5,17 @@ import {
   reducerUtils,
   handleAsyncActions,
   createPromiseThunkById,
+  handleAsyncActionsById,
   // handleAsyncActionsById,
 } from "../../lib/asyncUtils";
 
 const GET_COMMENTS = "GET_COMMENTS";
 const GET_COMMENTS_SUCCESS = "GET_COMMENTS_SUCCESS";
 const GET_COMMENTS_ERROR = "GET_COMMENTS_ERROR";
+
+const GET_COMMENTS_PAGE = "GET_COMMENTS_PAGE";
+const GET_COMMENTS_PAGE_SUCCESS = "GET_COMMENTS_PAGE_SUCCESS";
+const GET_COMMENTS_PAGE_ERROR = "GET_COMMENTS_PAGE_ERROR";
 
 const DELETE_COMMENT = "DELETE_COMMENT";
 // const DELETE_COMMENT_SUCCESS = "DELETE_COMMENT_SUCCESS";
@@ -64,6 +69,11 @@ export const getComments = createPromiseThunk(
   commentsApi.getComments
 );
 
+export const getCommentsPage = createPromiseThunkById(
+  GET_COMMENTS_PAGE,
+  commentsApi.getCommentsPage
+)
+
 export const deleteComment = createPromiseThunkById(
   DELETE_COMMENT,
   commentsApi.deleteComment
@@ -87,6 +97,7 @@ export const putComment = createPromiseThunkById(
 export const initialState = {
   comments: reducerUtils.initial(),
   modifyComment: reducerUtils.initial(),
+  page: reducerUtils.initial()
 };
 
 export default function comments(state = initialState, action) {
@@ -95,6 +106,10 @@ export default function comments(state = initialState, action) {
     case GET_COMMENTS_SUCCESS:
     case GET_COMMENTS_ERROR:
       return handleAsyncActions(GET_COMMENTS, "comments", true)(state, action);
+    case GET_COMMENTS_PAGE:
+    case GET_COMMENTS_PAGE_SUCCESS:
+    case GET_COMMENTS_PAGE_ERROR:
+      return handleAsyncActions(GET_COMMENTS_PAGE, "page", true)(state, action);
     // case POST_COMMENT:
     // case POST_COMMENT_SUCCESS:
     // case POST_COMMENT_ERROR:

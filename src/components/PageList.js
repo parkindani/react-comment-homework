@@ -21,15 +21,16 @@ const Page = styled.button`
   margin-right: 3px;
 `;
 
-function PageList({ length }) {
-  console.log("PageList");
-  console.log(length);
+function PageList({ length, onClick }) {
   const pageLength = Math.ceil(length / 4);
-
   const pageArray = [];
 
   for (let i = 1; i <= pageLength; i++) {
-    pageArray.push(<Page key={i}>{i}</Page>);
+    pageArray.push(
+      <Page onClick={() => onClick(i)} key={i}>
+        {i}
+      </Page>
+    );
   }
 
   return <PageListStyle>{pageArray}</PageListStyle>;

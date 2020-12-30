@@ -5,6 +5,15 @@ export const getComments = async () => {
   return response.data;
 };
 
+export const getCommentsPage = async (page) => {
+  const response = await axios.get(
+    `http://localhost:4000/comments?_page=${page}&_limit=4&_order=desc&_sort=id`
+  );
+  console.log('GET_COMMENTS_PAGE');
+  console.log(response)
+  return response.data;
+};
+
 export const getComment = async (id) => {
   const response = await axios.get(`http://localhost:4000/comments/${id}`);
   return response.data;

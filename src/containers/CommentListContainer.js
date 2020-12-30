@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentList from "../components/CommentList";
-import { getComments, deleteComment, setComment } from "../store/modules/comments";
+import { getComments, getCommentsPage, deleteComment, setComment } from "../store/modules/comments";
 
 function CommentListContainer() {
   const { data, loading, error } = useSelector(
-    (state) => state.comments.comments
+    (state) => state.comments.page
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getComments());
+    dispatch(getCommentsPage(1));
   }, [dispatch]);
 
   if (loading && !data) return <div>로딩중...</div>;
@@ -19,7 +19,7 @@ function CommentListContainer() {
 
   const onDelete = (id) => {
     dispatch(deleteComment(id));
-    dispatch(getComments());
+    dispatch(getCommentsPage(1));
   };
 
   const onModify = (id) => {
