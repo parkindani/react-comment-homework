@@ -16,6 +16,10 @@ const DELETE_COMMENT = "DELETE_COMMENT";
 const DELETE_COMMENT_SUCCESS = "DELETE_COMMENT_SUCCESS";
 const DELETE_COMMENT_ERROR = "DELETE_COMMENT_ERROR";
 
+const POST_COMMENT = "POST_COMMENT";
+const POST_COMMENT_SUCCESS = "POST_COMMENT_SUCCESS";
+const POST_COMMENT_ERROR = "POST_COMMENT_ERROR";
+
 // const GET_COMMENT = "GET_COMMENT";
 // const GET_COMMENT_SUCCESS = "GET_COMMENT_SUCCESS";
 // const GET_COMMENT_ERROR = "GET_COMMENT_ERROR";
@@ -51,6 +55,11 @@ export const getComments = createPromiseThunk(
 export const deleteComment = createPromiseThunkById(
   DELETE_COMMENT,
   commentsApi.deleteComment
+);
+
+export const postComment = createPromiseThunkById(
+  POST_COMMENT,
+  commentsApi.postComment,
 );
 
 export const initialState = { comments: reducerUtils.initial() };
