@@ -24,8 +24,6 @@ function CommentListContainer() {
   };
 
   const onModify = (id) => {
-    console.log(">>>>>>>>CommentListContainer>>>>>onModify>>>>>>>");
-    console.log(id);
     dispatch(setComment(id))
   };
 

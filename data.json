@@ -1,32 +1,32 @@
 {
   "comments": [
     {
-      "id": 3,
-      "profile_url": "https://picsum.photos/id/3/50/50",
-      "author": "abc_3",
-      "content": "코드에러가 발생했는데 어딘지 모르겠어요?",
-      "createdAt": "2020-05-03"
-    },
-    {
-      "id": 4,
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "abc_4",
-      "content": "Javascript 기초가 부족한데 좋은 가이드 있나요",
-      "createdAt": "2020-05-04"
+      "author": "다섯여섯일곱여덟",
+      "content": "아홉여렵",
+      "createdAt": "2020-03-03",
+      "id": 9
     },
     {
-      "profile_url": "asdfasdf",
-      "author": "asdfasdf",
-      "content": "asdfasdf",
-      "createdAt": "asdfasdf",
-      "id": 7
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "앵귤러짱",
+      "content": "앵귤러가 더 좋아요",
+      "createdAt": "2020-09-09",
+      "id": 11
     },
     {
-      "profile_url": "ㅁ",
-      "author": "ㅁ",
-      "content": "ㅁ",
-      "createdAt": "ㅁ",
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "리액트 네이티브",
+      "content": "리액트 네이티브",
+      "createdAt": "2020-09-09",
       "id": 12
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "타입스크립트",
+      "content": "하나둘셋넷다섯",
+      "createdAt": "2020-09-09",
+      "id": 13
     }
   ]
 }
