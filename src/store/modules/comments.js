@@ -47,16 +47,12 @@ export const getComments = createPromiseThunk(
 export const initialState = { comments: reducerUtils.initial() };
 
 export default function comments(state = initialState, action) {
-  console.log(">>>>>>>>>>>>>>comments.js>>>>>comments>>>>>>>>>>>");
-  console.log(state);
-  console.log(action);
   switch (action.type) {
     case GET_COMMENTS:
     case GET_COMMENTS_SUCCESS:
     case GET_COMMENTS_ERROR:
       return handleAsyncActions(GET_COMMENTS, "comments", true)(state, action);
     default:
-      console.log(">>>>>>>>>>>>default>>>>>>>>>>>>>");
       return state;
   }
 }

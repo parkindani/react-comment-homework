@@ -10,4 +10,9 @@ export const getComment = async (id) => {
   return response.data;
 };
 
-// todo: post, put, delete, get lazy
+export const deleteComment = async (id) => {
+  const response = await axios.delete(`http://localhost:4000/comments/${id}`);
+  return response.data;
+}
+
+// todo: post, put, delete, get lazy 

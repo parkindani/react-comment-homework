@@ -1,12 +1,9 @@
 // Promise에 기반한 Thunk를 만들어주는 함수입니다.
 export const createPromiseThunk = (type, promiseCreator) => {
-  console.log('>>>>>>>>>createPromiseThunk');
-  console.log(type)
   const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
 
   const thunkCreator = (param) => async(dispatch) => {
-    console.log('>>>>>>>>>start dispatch')
-    console.log(dispatch)
+
     // 요청 시작
     dispatch({ type, param });
     try {
@@ -18,8 +15,6 @@ export const createPromiseThunk = (type, promiseCreator) => {
     }
   };
 
-  console.log("thunk??");
-  console.log(thunkCreator)
 
   return thunkCreator;
 };

@@ -10,7 +10,6 @@ function CommentListContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(dispatch);
     dispatch(getComments());
   }, [dispatch]);
 
