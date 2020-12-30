@@ -1,16 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getComments, postComment } from "../store/modules/comments";
 import Form from "../components/Form";
 
 function FormContainer() {
+  const { data, loading, error } = useSelector(
+    (state) => state.comments.modifyComment
+  );
   const dispatch = useDispatch();
   const onCreate = (comment) => {
-    console.log(">>>>>>>>FormContainer>>>>>>");
-    console.log(comment);
     dispatch(postComment(comment));
     dispatch(getComments());
   };
+
+  if (loading && !data) return <div>로딩중...</div>;
+  if (error) return <div>에러 발생!</div>;
+  if (data) return <Form onPost={onCreate} comment={data}/>;
 
   return <Form onPost={onCreate} />;
 }

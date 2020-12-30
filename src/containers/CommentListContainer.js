@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CommentList from "../components/CommentList";
-import { getComments, deleteComment } from "../store/modules/comments";
+import { getComments, deleteComment, setComment } from "../store/modules/comments";
 
 function CommentListContainer() {
   const { data, loading, error } = useSelector(
@@ -25,6 +25,7 @@ function CommentListContainer() {
   const onModify = (id) => {
     console.log(">>>>>>>>CommentListContainer>>>>>onModify>>>>>>>");
     console.log(id);
+    dispatch(setComment(id))
   };
 
   return (

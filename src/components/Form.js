@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const FormStyle = styled.div`
@@ -34,8 +34,16 @@ const initialState = {
   createdAt: "",
 };
 
-function Form({ onPost }) {
+function Form({ onPost, comment = null }) {
   const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    if (comment) {
+      console.log("useEffect");
+      console.log(comment);
+      setState(comment);
+    }
+  }, [comment]);
 
   const onChange = (e) => {
     const { name, value } = e.target;

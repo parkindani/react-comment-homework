@@ -20,6 +20,14 @@ const POST_COMMENT = "POST_COMMENT";
 const POST_COMMENT_SUCCESS = "POST_COMMENT_SUCCESS";
 const POST_COMMENT_ERROR = "POST_COMMENT_ERROR";
 
+const SET_COMMENT = "SET_COMMENT";
+const SET_COMMENT_SUCCESS = "SET_COMMENT_SUCCESS";
+const SET_COMMENT_ERROR = "SET_COMMENT_ERROR";
+
+const GET_COMMENT = "GET_COMMENT";
+const GET_COMMENT_SUCCESS = "GET_COMMENT_SUCCESS";
+const GET_COMMENT_ERROR = "GET_COMMENT_ERROR";
+
 // const GET_COMMENT = "GET_COMMENT";
 // const GET_COMMENT_SUCCESS = "GET_COMMENT_SUCCESS";
 // const GET_COMMENT_ERROR = "GET_COMMENT_ERROR";
@@ -59,10 +67,15 @@ export const deleteComment = createPromiseThunkById(
 
 export const postComment = createPromiseThunkById(
   POST_COMMENT,
-  commentsApi.postComment,
+  commentsApi.postComment
 );
 
-export const initialState = { comments: reducerUtils.initial() };
+export const setComment = createPromiseThunkById(
+  SET_COMMENT,
+  commentsApi.getComment
+);
+
+export const initialState = { comments: reducerUtils.initial(), modifyComment: reducerUtils.initial() };
 
 export default function comments(state = initialState, action) {
   switch (action.type) {
@@ -77,6 +90,13 @@ export default function comments(state = initialState, action) {
         DELETE_COMMENT,
         "comments",
         true
+      )(state, action);
+    case SET_COMMENT:
+    case SET_COMMENT_SUCCESS:
+    case SET_COMMENT_ERROR:
+      return handleAsyncActions(
+        SET_COMMENT,
+        "modifyComment",
       )(state, action);
     default:
       return state;
