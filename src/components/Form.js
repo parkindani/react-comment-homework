@@ -34,19 +34,17 @@ const initialState = {
   createdAt: "",
 };
 
-function Form() {
+function Form({ onPost }) {
   const [state, setState] = useState(initialState);
 
   const onChange = (e) => {
-    const key = e.target.name;
-    const value = e.target.value;
-    setState({ ...state, [key]: value });
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
   };
 
   const onCreate = (e) => {
     e.preventDefault();
-    console.log(">>>>>>>>>>>>>>>Form>>>>onCreate>>>>");
-    console.log(state);
+    onPost(state);
     setState(initialState);
   };
 
