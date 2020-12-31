@@ -20,7 +20,6 @@ function FormContainer() {
     if (comment.id) {
       dispatch(putComment(comment)).then(() => {
         dispatch(getCommentsPage(page.page));
-        dispatch(getComments());
       });
     } else {
       dispatch(postComment(comment)).then(() => {
