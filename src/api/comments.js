@@ -9,12 +9,8 @@ export const getCommentsPage = async (page) => {
   const response = await axios.get(
     `http://localhost:4000/comments?_page=${page}&_limit=4&_order=desc&_sort=id`
   );
-  
-  // response.page = page;
-  // console.log('page::')
-  // console.log(response)
+
   return {comments: response.data, page };
-  // return response;
 };
 
 export const getComment = async (id) => {
