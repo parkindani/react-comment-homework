@@ -81,7 +81,7 @@ export const deleteComment = createPromiseThunkById(
 
 export const postComment = createPromiseThunk(
   POST_COMMENT,
-  commentsApi.postComment
+  commentsApi.postComment,
 );
 
 export const setComment = createPromiseThunkById(

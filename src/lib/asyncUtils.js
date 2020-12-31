@@ -2,23 +2,19 @@
 export const createPromiseThunk = (type, promiseCreator) => {
   const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
 
-  const thunkCreator = (param) => async(dispatch) => {
-
+  const thunkCreator = (param) => async (dispatch) => {
     // 요청 시작
     dispatch({ type, param });
     try {
       // 결과물의 이름을 payload 라는 이름으로 통일시킵니다.
       const payload = await promiseCreator(param);
-      console.log('createPromisThinkSuccess');
-      console.log(payload)
       dispatch({ type: SUCCESS, payload }); // 성공
     } catch (e) {
-      console.log('createPromisThinkError');
-      console.log(e)
+      console.log("createPromisThinkError");
+      console.log(e);
       dispatch({ type: ERROR, payload: e, error: true }); // 실패
     }
   };
-
 
   return thunkCreator;
 };

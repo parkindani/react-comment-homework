@@ -10,7 +10,7 @@
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
       "author": "앵귤러짱",
-      "content": "앵귤러가 더 좋아요",
+      "content": "앵귤러가 더 좋을까요>",
       "createdAt": "2020-09-09",
       "id": 11
     },
@@ -23,10 +23,17 @@
     },
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "타입스크립트",
-      "content": "하나둘셋넷다섯",
-      "createdAt": "2020-09-09",
-      "id": 13
+      "author": "async",
+      "content": "비동기 테스트",
+      "createdAt": "2020-12-31",
+      "id": 15
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "비동기",
+      "content": "비동기 테스트를 해 봅시다",
+      "createdAt": "2020-12-31",
+      "id": 16
     }
   ]
 }

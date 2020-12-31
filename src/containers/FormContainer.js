@@ -12,16 +12,19 @@ function FormContainer() {
   const { data, loading, error } = useSelector(
     (state) => state.comments.modifyComment
   );
-  console.log()
+  console.log();
   const dispatch = useDispatch();
   const onCreate = (comment) => {
     if (comment.id) {
-      dispatch(putComment(comment));
+      dispatch(putComment(comment)).then(() => {
+        dispatch(getComments());
+      });
     } else {
-      dispatch(postComment(comment));
-      dispatch(getCommentsPage(1));
+      dispatch(postComment(comment)).then(() => {
+        dispatch(getCommentsPage(1));
+        dispatch(getComments());
+      });
     }
-    dispatch(getComments());
   };
 
   if (loading && !data) return <div>로딩중...</div>;
