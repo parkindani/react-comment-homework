@@ -5,8 +5,6 @@ import {
   reducerUtils,
   handleAsyncActions,
   createPromiseThunkById,
-  handleAsyncActionsById,
-  // handleAsyncActionsById,
 } from "../../lib/asyncUtils";
 
 const GET_COMMENTS = "GET_COMMENTS";
@@ -127,8 +125,6 @@ export default function comments(state = initialState, action) {
     case SET_COMMENT_ERROR:
       return handleAsyncActions(SET_COMMENT, "modifyComment")(state, action);
     default: {
-      console.log('>>>>>>>>>DEFAULT>>>>>>>>>>>');
-      console.log(action)
       return state;
     }
   }

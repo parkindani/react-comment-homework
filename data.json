@@ -9,13 +9,6 @@
     },
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "리액트 네이티브?????",
-      "content": "리액트 네이티브 쓸까요>",
-      "createdAt": "2020-09-09",
-      "id": 12
-    },
-    {
-      "profile_url": "https://picsum.photos/id/4/50/50",
       "author": "async잘 되네요",
       "content": "비동기 테스트 완료",
       "createdAt": "2020-12-31",
@@ -41,6 +34,27 @@
       "content": "돌아가면 되는거지 뭐 ",
       "createdAt": "2020-12=30",
       "id": 18
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "작성자",
+      "content": "열두시 이십일분",
+      "createdAt": "2020-12-31",
+      "id": 19
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "또 다른 작성자",
+      "content": "열두시 이십이분",
+      "createdAt": "2020-12-31",
+      "id": 20
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "작성자 셋",
+      "content": "열두시 이십삼분",
+      "createdAt": "2020-12-31",
+      "id": 21
     }
   ]
 }
