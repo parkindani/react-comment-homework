@@ -32,7 +32,7 @@ function CommentListContainer() {
   };
 
   return (
-    <CommentList comments={data} onDelete={onDelete} onModify={onModify} />
+    <CommentList comments={data.comments} onDelete={onDelete} onModify={onModify} />
   );
 }
 

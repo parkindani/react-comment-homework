@@ -2,29 +2,22 @@
   "comments": [
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "다섯여섯일곱여덟",
-      "content": "아홉여렵",
-      "createdAt": "2020-03-03",
-      "id": 9
-    },
-    {
-      "profile_url": "https://picsum.photos/id/4/50/50",
       "author": "앵귤러짱",
-      "content": "앵귤러가 더 좋을까요>",
+      "content": "앵귤러가 더 좋은지는 잘 ",
       "createdAt": "2020-09-09",
       "id": 11
     },
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "리액트 네이티브",
-      "content": "리액트 네이티브",
+      "author": "리액트 네이티브?????",
+      "content": "리액트 네이티브 쓸까요>",
       "createdAt": "2020-09-09",
       "id": 12
     },
     {
       "profile_url": "https://picsum.photos/id/4/50/50",
-      "author": "async",
-      "content": "비동기 테스트",
+      "author": "async잘 되네요",
+      "content": "비동기 테스트 완료",
       "createdAt": "2020-12-31",
       "id": 15
     },
@@ -34,6 +27,20 @@
       "content": "비동기 테스트를 해 봅시다",
       "createdAt": "2020-12-31",
       "id": 16
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "최종 테스트",
+      "content": "비록 코드는 지저분하지만",
+      "createdAt": "2020-12-31",
+      "id": 17
+    },
+    {
+      "profile_url": "https://picsum.photos/id/4/50/50",
+      "author": "어쨌든",
+      "content": "돌아가면 되는거지 뭐 ",
+      "createdAt": "2020-12=30",
+      "id": 18
     }
   ]
 }

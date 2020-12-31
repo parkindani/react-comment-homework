@@ -12,11 +12,14 @@ function FormContainer() {
   const { data, loading, error } = useSelector(
     (state) => state.comments.modifyComment
   );
-  console.log();
+  const { data: page, loading: pageLoading, error: pageError } = useSelector(
+    (state) => state.comments.page
+  );
   const dispatch = useDispatch();
   const onCreate = (comment) => {
     if (comment.id) {
       dispatch(putComment(comment)).then(() => {
+        dispatch(getCommentsPage(page.page));
         dispatch(getComments());
       });
     } else {
@@ -27,9 +30,9 @@ function FormContainer() {
     }
   };
 
-  if (loading && !data) return <div>로딩중...</div>;
-  if (error) return <div>에러 발생!</div>;
-  if (data) return <Form onPost={onCreate} comment={data} />;
+  if (loading && pageLoading && !data && !page) return <div>로딩중...</div>;
+  if (error || pageError) return <div>에러 발생!</div>;
+  if (data && page) return <Form onPost={onCreate} comment={data} />;
 
   return <Form onPost={onCreate} />;
 }
