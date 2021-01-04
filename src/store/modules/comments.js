@@ -27,40 +27,9 @@ const SET_COMMENT = "SET_COMMENT";
 const SET_COMMENT_SUCCESS = "SET_COMMENT_SUCCESS";
 const SET_COMMENT_ERROR = "SET_COMMENT_ERROR";
 
-// const GET_COMMENT = "GET_COMMENT";
-// const GET_COMMENT_SUCCESS = "GET_COMMENT_SUCCESS";
-// const GET_COMMENT_ERROR = "GET_COMMENT_ERROR";
-
 const PUT_COMMENT = "PUT_COMMENT";
 // const PUT_COMMENT_SUCCESS = "PUT_COMMENT_SUCCESS";
 // const PUT_COMMENT_ERROR = "PUT_COMMENT_ERROR";
-
-// const GET_COMMENT = "GET_COMMENT";
-// const GET_COMMENT_SUCCESS = "GET_COMMENT_SUCCESS";
-// const GET_COMMENT_ERROR = "GET_COMMENT_ERROR";
-
-// export const getComments = () => ({ type: GET_COMMENTS });
-// export const getComment = (id) => ({
-//   type: GET_COMMENT,
-//   payload: id,
-//   meta: id,
-// });
-
-// function* getCommentsSaga() {
-//   try {
-//     const comments = yield call(commentsApi.getComments);
-//     yield put({
-//       type: GET_COMMENTS_SUCCESS,
-//       payload: comments,
-//     });
-//   } catch (e) {
-//     yield put({
-//       type: GET_COMMENTS_ERROR,
-//       payload: e,
-//       error: true,
-//     });
-//   }
-// }
 
 export const getComments = createPromiseThunk(
   GET_COMMENTS,
@@ -79,7 +48,7 @@ export const deleteComment = createPromiseThunkById(
 
 export const postComment = createPromiseThunk(
   POST_COMMENT,
-  commentsApi.postComment,
+  commentsApi.postComment
 );
 
 export const setComment = createPromiseThunkById(

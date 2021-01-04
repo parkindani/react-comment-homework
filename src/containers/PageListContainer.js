@@ -22,7 +22,6 @@ function PageListContainer() {
   const len = data.length;
 
   const onClick = (i) => {
-    console.log("LISTCONTAINER", i);
     dispatch(getCommentsPage(i))
   };
 

@@ -10,8 +10,6 @@ export const createPromiseThunk = (type, promiseCreator) => {
       const payload = await promiseCreator(param);
       dispatch({ type: SUCCESS, payload }); // 성공
     } catch (e) {
-      console.log("createPromisThinkError");
-      console.log(e);
       dispatch({ type: ERROR, payload: e, error: true }); // 실패
     }
   };

@@ -39,8 +39,6 @@ function Form({ onPost, comment = null }) {
 
   useEffect(() => {
     if (comment) {
-      console.log("useEffect");
-      console.log(comment);
       setState(comment);
     }
   }, [comment]);
